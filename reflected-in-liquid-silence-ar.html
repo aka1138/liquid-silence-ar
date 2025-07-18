@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Reflected in Liquid Silence – AR</title>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/akbartus/Simple-AR@main/build/simple-ar.js"></script>
+    <style>
+      body { margin: 0; overflow: hidden; }
+      video { display: none; }
+    </style>
+  </head>
+  <body>
+    <a-scene simple-ar>
+      <a-entity simple-ar-camera></a-entity>
+
+      <!-- Image target entity -->
+      <a-entity simple-ar-image="src: /mnt/data/Reflected in Liquid Silence000.jpg">
+        <!-- Overlay video -->
+        <a-video 
+          src="#arVideo" 
+          width="1.2" height="2" 
+          position="0 0 0" 
+          rotation="-90 0 0"
+          autoplay loop muted></a-video>
+      </a-entity>
+    </a-scene>
+
+    <!-- Video asset -->
+    <video id="arVideo" src="/mnt/data/Reflected in Liquid Silence tag.mp4" autoplay loop muted playsinline crossorigin="anonymous"></video>
+  </body>
+</html>
